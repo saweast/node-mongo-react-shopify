@@ -1,22 +1,15 @@
 {
   "name": "node-mongo-react-shopify",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/paradoxofvalue/node-mongo-react-shopify.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/paradoxofvalue/node-mongo-react-shopify/issues"
-  },
-  "homepage": "https://github.com/paradoxofvalue/node-mongo-react-shopify#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "~1.4.4",
+    "create-react-app": "^3.4.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1"
   }
 }

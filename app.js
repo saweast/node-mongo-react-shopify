@@ -19,6 +19,6 @@ app.use(express.static(path.join(__dirname, 'public/build')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
-app.use('/auth', shopifyAuthRouter);
+app.use('api/auth', shopifyAuthRouter);
 
 module.exports = app;

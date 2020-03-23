@@ -18,7 +18,7 @@ class Login extends Component {
 
   onSubmit = () => {
     const { shopValue } = this.state;
-    const url = `${config.apiPath}/auth?shop=${shopValue}`;
+    const url = `api/auth?shop=${shopValue}`;
 
     location.replace(url); // eslint-disable-line
   }

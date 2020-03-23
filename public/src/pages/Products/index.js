@@ -16,13 +16,11 @@ import { productsPath } from '../../utils/paths';
 import ProductsList from '../../components/ProductsList';
 
 import { fetchProducts, searchProducts } from '../../actions/product';
-import { fetchMainTheme } from '../../actions/theme';
 
 class Products extends Component {
   static propTypes = {
     fetchProducts: func.isRequired,
     searchProducts: func.isRequired,
-    fetchMainTheme: func.isRequired,
 
     product: shape({
       list: array,
@@ -51,7 +49,6 @@ class Products extends Component {
     const { shop, limit } = this.state;
 
     if (!fetched) {
-      this.props.fetchMainTheme(shop);
       this.props.fetchProducts(shop, limit);
     }
   }
@@ -158,8 +155,7 @@ const mapStateToProps = ({ product }) => ({
 
 const mapDispatchToProps = {
   fetchProducts,
-  searchProducts,
-  fetchMainTheme,
+  searchProducts
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Products));

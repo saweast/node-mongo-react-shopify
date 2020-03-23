@@ -5,16 +5,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { FooterHelp, Link } from '@shopify/polaris';
 
 import Login from '../pages/Login';
-// import Product from '../pages/Product';
 import Products from '../pages/Products';
 
-import { homePath, loginPath, productPath } from '../utils/paths';
+import { homePath, loginPath } from '../utils/paths';
 
 export default () => (
   <Fragment>
     <Router>
       <Switch>
-        {/* <Route exact path={productPath} component={Product} /> */}
         <Route exact path={homePath} component={Products} />
         <Route path={loginPath} component={Login} />
       </Switch>

@@ -24,7 +24,7 @@ class Bridge extends Component {
 
   shopifyBridge = () => {
     const { shop } = this.state;
-    const redirectUri = `${config.apiPath}/auth/callback`;
+    const redirectUri = `api/auth/callback`;
     const scopes = 'write_products, write_themes';
     const permissionUrl = `/oauth/authorize?client_id=${config.apiKey}&scope=${scopes}&redirect_uri=${redirectUri}`;
 

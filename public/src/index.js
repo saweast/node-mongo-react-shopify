@@ -1,24 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { RedBox } from 'redbox-react';
+import configureStore from './store/configureStore';
+import config from './utils/config';
+import App from './components/App';
 
-import App from './App';
+const store = configureStore();
+const rootElement = document.getElementById('root');
 
-import '@shopify/polaris/styles.css';
-import { AppProvider } from '@shopify/polaris';
-import enTranslations from '@shopify/polaris/locales/en.json';
+const renderComponent = (Component) => {
+  render(
+    <AppContainer>
+      <Component store={store} />
+    </AppContainer>,
+    rootElement);
+};
 
-import {
-  BrowserRouter as Router,
-} from "react-router-dom";
-
-function WrappedApp() {
-  return (
-    <Router>
-      <AppProvider i18n={enTranslations}>
-        <App />
-      </AppProvider>
-    </Router>
-  );
+if (config.env === 'development') {
+  try {
+    renderComponent(App);
+  } catch (e) {
+    renderComponent(<RedBox error={e} />);
+  }
+} else {
+  renderComponent(App);
 }
 
-ReactDOM.render(<WrappedApp  />, document.getElementById('root'));
+if (module.hot) {
+  module.hot.accept('./components/App', () => {
+    renderComponent(App);
+  });
+}

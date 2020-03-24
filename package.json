@@ -14,6 +14,11 @@
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "morgan": "~1.9.1",
-    "nonce": "^1.0.4"
+    "nonce": "^1.0.4",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5",
+    "sequelize-auto-migrations": "^1.0.3",
+    "sequelize-cli": "^5.5.1"
   }
 }

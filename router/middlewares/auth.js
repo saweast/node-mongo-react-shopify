@@ -1,6 +1,6 @@
-import models from '../../sequelize/models';
+var models = require('../../sequelize/models');
 
-export default (req, res, next) => {
+module.exports = (req, res, next) => {
   let reqShop = '';
   switch (req.method) {
     case 'GET':

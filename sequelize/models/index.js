@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import Sequelize from 'sequelize';
-import config from '../config/config';
+var fs = require('fs');
+var path = require('path');
+var Sequelize = require('sequelize');
+var config = require('../config/config');
 
 const db = {};
 let sequelize;
@@ -34,4 +34,4 @@ const initSequelize = () => {
 
 initSequelize();
 
-export default db;
+module.exports = db;
